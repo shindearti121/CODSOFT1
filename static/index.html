@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Movie Rating Predictor</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-anim"></div>
+    <div class="container">
+        <header>
+            <h1 class="glow-text">IMDb Rating Predictor</h1>
+            <p class="subtitle">Enter movie details to predict its success</p>
+        </header>
+        
+        <div class="form-wrapper glassmorphism">
+            <form id="prediction-form">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="year">Release Year</label>
+                        <input type="number" id="year" placeholder="e.g. 2023" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="duration">Duration (min)</label>
+                        <input type="number" id="duration" placeholder="e.g. 120" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="genre">Genre(s)</label>
+                        <input type="text" id="genre" placeholder="e.g. Drama, Action" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="votes">Number of Votes</label>
+                        <input type="number" id="votes" placeholder="e.g. 5000" required>
+                    </div>
+                </div>
+
+                <div class="input-field full-width">
+                    <label for="director">Director</label>
+                    <input type="text" id="director" placeholder="Director Name" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="actor1">Actor 1</label>
+                        <input type="text" id="actor1" placeholder="Lead Actor" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="actor2">Actor 2</label>
+                        <input type="text" id="actor2" placeholder="Supporting Actor">
+                    </div>
+                </div>
+
+                <div class="input-field full-width">
+                    <label for="actor3">Actor 3</label>
+                    <input type="text" id="actor3" placeholder="Supporting Actor">
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Predict Rating</span>
+                    <div class="loader hidden"></div>
+                </button>
+            </form>
+        </div>
+
+        <div id="result-container" class="glassmorphism hidden">
+            <h2>Predicted Rating</h2>
+            <div class="rating-circle">
+                <span id="predicted-rating">0.0</span><span class="max-rating">/10</span>
+            </div>
+            <button id="reset-btn" class="reset-btn">Predict Another</button>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
